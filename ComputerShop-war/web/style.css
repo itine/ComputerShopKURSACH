@@ -1,0 +1,128 @@
+.navig {background-color:whitesmoke; text-align:center; width:100%; height: 2em;}
+
+a:link{
+    color: black;
+}
+a:active{
+    color: blue;
+}
+
+a:visited{
+    color: black;
+}
+a
+{ 
+    text-decoration: none;
+}
+h1
+{
+    text-indent: 20px;
+    font-family: georgia;
+    font-variant: small-caps;
+    color: whitesmoke;
+}
+p
+{
+    text-indent: 20px;
+    font-family: georgia;
+}
+.shadowtext
+{
+    text-shadow: 1px 1px 2px black;
+    color: white; 
+}
+.letter
+{
+    color: White; 
+    font-size: 200%;
+    font-weight: bold;
+}
+.zagol{
+    font-size: 140%;
+    color: #2F4F4F;
+    font-weight: bold;
+    text-shadow:#DDDDDD -2px -8px 2px;
+    text-decoration: blink;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+
+body
+{
+    background: url(computerShop.jpg) no-repeat;
+    background-size: 100%;
+    background-attachment: fixed ;
+}
+.semilayer {
+    padding: 5px;
+    background: #2795a8; 
+    margin: 0 auto; 
+    width: 23%; 
+    opacity: 0.9; 
+    filter: alpha(Opacity=90); 
+}
+.shadow {
+    box-shadow: 0 0 100px rgba(0,0,0,10); 
+   }
+.button {
+    position: relative;
+    background-color: #AFCDE7;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 8px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button:after {
+    content: "";
+    background: #AFCDE7;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.textbox { 
+    -moz-border-radius-topright: 30px;
+    -webkit-border-top-right-radius: 30px;
+    border-top-right-radius: 30px;
+    -moz-border-radius-bottomleft: 30px;
+    -webkit-border-bottom-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: 1px solid #848484;
+    outline:0; 
+    height:35px; 
+    width: 235px; 
+    padding-right:15px; 
+    padding-left:15px; 
+    text-align: center;
+    text-height: max-size;
+}
+.btn-6d {
+ border: 2px dashed #226fbe;
+}
+
+.btn-6d:hover {
+ background: transparent;
+ color: #226fbe;
+}

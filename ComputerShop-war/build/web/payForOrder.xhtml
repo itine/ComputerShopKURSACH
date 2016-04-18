@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <head>
+        <title>Оформение</title>
+        <link href="style.css" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <h:body>
+        <script type="text/javascript">
+            function coloreditor(obj, cvet)
+            {
+                obj.style.backgroundColor = cvet
+            }
+        </script> 
+        <f:view>
+            <h:form>
+                <table style="border-top-left-radius:  23px; border-top-right-radius: 23px" border="0" bgcolor="#CDB5CD" align="center" width="1000">
+                    <tr><td>
+                            <table style="border-top-left-radius:  23px; border-top-right-radius: 23px" border="0" bgcolor="#AB82FF" align="center" width="990">
+                                <tr><td>
+                                        <font face="Comic Sans MS"  color="#2F4F4F" size="4">
+                                            <h1 align="center" class="shadowtext">Оплата заказа</h1>
+                                        </font></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table border="0" bgcolor="#CDB5CD" align="center" width="1000">
+                    <tr>
+                        <td>
+                            <table class="navig" border="0" bgcolor="#FFFFFF" align="center" width="990">
+                                <tr>
+                                    <td width="170" onmouseover="coloreditor(this, '#AB82FF')" onmouseout="coloreditor(this, 'white')">
+                                        <h:commandLink action="#{basketBean.exit()}" value="Выйти"> </h:commandLink>
+                                    </td>
+                                    <td width="170" onmouseover="coloreditor(this, '#AB82FF')" onmouseout="coloreditor(this, 'white')" align="center">
+                                        <h:commandLink action="/controller.xhtml" value="Управление магазином"> </h:commandLink>
+                                    </td>
+                                    <td width="170" onmouseover="coloreditor(this, '#AB82FF')" onmouseout="coloreditor(this, 'white')" align="center">
+                                        <h:commandLink action="/basket.xhtml" value="Корзина"> </h:commandLink>
+                                    </td>
+                                    <td onmouseover="coloreditor(this, '#AB82FF')" onmouseout="coloreditor(this, 'white')" width="170"  align="center">
+                                        <h:commandLink action="/clientOrders.xhtml" value="Заказы"> </h:commandLink>
+                                    </td>
+                                    <td onmouseover="coloreditor(this, '#AB82FF')" onmouseout="coloreditor(this, 'white')" width="170" align="center">
+                                        <h:commandLink action="/products.xhtml" value="Товары"> </h:commandLink>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <table style="border-bottom-left-radius: 23px; border-bottom-right-radius: 23px" border="0" bgcolor="#CDB5CD" align="center" width="1000">
+                    <tr>
+                        <td>
+                            <table style="border-bottom-left-radius: 23px; border-bottom-right-radius: 23px" border="0" bgcolor="#AB82FF" align="center" width="990">
+                                <tr>
+                                    <td>
+                                        <font size="4" color="#2F4F4F" face="Comic Sans MS">
+
+
+
+                                            <h:outputLabel value="Общая стоимость заказа: #{basketBean.subtotal}| Денег на счету: 0 #{accountBean.subtotal}"/>
+                                            <hr></hr>
+                                            <table border="0">
+                                                
+                                                    <tr>
+                                                        <th align="left"><h:outputLabel value="Способ оплаты: "/></th>
+                                                        <th align="right"><h:selectOneMenu value="#{orderBean.paymethod}">
+                                                                <f:selectItem itemValue="cash" itemLabel="Наличными" />
+                                                                <f:selectItem itemValue="card" itemLabel="Оплатить картой" />
+                                                            </h:selectOneMenu></th>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <th align="left"> <h:commandButton value="Отменить заказ" action="#{orderBean.exit()}"/></th>
+                                                        <th align="right"><h:commandButton value="Оплатить" action="#{orderBean.orderConfirm(loginBean.getUserID(request.remoteUser))}"/></th>
+                                                    </tr>
+                                               
+                                            </table>
+
+                                            <h:outputLabel value="Стоимость доставки: 200Р (город Владимир)"/>
+                                        </font>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
