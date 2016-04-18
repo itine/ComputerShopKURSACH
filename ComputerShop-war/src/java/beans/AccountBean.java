@@ -39,7 +39,7 @@ public class AccountBean {
         return this.orderDAO.showHistory(userName);
     }
 
-    public boolean addFunds(int money, int accountID) throws Exception {  
+    public String addFunds(int money, int accountID) throws Exception {  
         
         if (!this.orderDAO.showHistory(userName)){
             return "/error.xhtml";
